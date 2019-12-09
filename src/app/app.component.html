@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<div class="container">
+  <h1> Weather Application</h1>
+
+  <p class="header">Please Enter your State Name to Know the Weather</p>
+<input type="text" #state class="form-control-sm-6" name="state" placeholder="Enter State">
+<button type="submit" (click)=onClick(state.value) class="btn btn-success">Get Weather</button>
+
+<div class="row">
+  <div class="col-sm">
+    <p style="color: rgb(255, 72, 72);">Info </p>
+    
+         <div *ngFor="let list of mWeather"  >
+          <table class="table table-hover table-dark" style=" border:1px solid #eee">
+              <tr>
+              <th>State</th>  <th> Tempreture</th><th>Pressure</th><th>Humidity</th><th>Climate <i class="material-icons">
+                brightness_low
+                </i></th><th>Desc</th>
+              </tr>
+              <tr>
+               <td>{{list.name}}</td> <td>{{list.main.temp}}</td><td> <i class="material-icons">
+                waves
+                </i>{{list.main.pressure}}</td><td>{{list.main.humidity}}</td><td>{{list.weather[0].main}}</td><td>{{list.weather[0].description}}</td>
+              </tr>
+
+          </table>   
+          
+            
+         </div> 
+    
+   
+  </div>
+</div>
+</div>
